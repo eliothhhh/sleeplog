@@ -1,7 +1,8 @@
 use std::fmt;
+use serde::{Serialize, Deserialize};
 
 
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Tag {
     pub (self) name: String,
     pub (self) color: [String; 3]

@@ -5,7 +5,7 @@ use serde::{Serialize, Deserialize};
 use crate::article::Article;
 
 
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Journal {
     pub (self) name: String,
     pub (self) length: u32,

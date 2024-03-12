@@ -1,10 +1,11 @@
 use std::fmt;
+use serde::{Serialize, Deserialize};
 
 use chrono::{DateTime, Utc};
 use crate::tag::Tag;
 
 
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Article {
     pub (self) name: String,
     pub (self) date: DateTime<Utc>,
@@ -24,13 +25,13 @@ impl fmt::Display for Article {
 impl Article {
 
     // constructor
-    pub fn new(name: &str, content: &str, tags: Vec<Tag>) -> Self
+    pub fn new(name: &str, tags: Vec<Tag>, date: DateTime<Utc>, content: &str) -> Self
     {
         return Article {
             name: String::from(name),
-            content: String::from(content),
             date: Utc::now(),
-            tags
+            tags,
+            content: String::from(content)
         };
     }
 
