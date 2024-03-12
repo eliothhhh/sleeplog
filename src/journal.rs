@@ -1,11 +1,20 @@
+use core::fmt;
 use std::collections::BTreeMap;
 use crate::article::Article;
 
-
+#[derive(Debug)]
 pub struct Journal {
     pub (self) name: String,
     pub (self) content: BTreeMap<u32, Article>,
     pub (self) length: u32
+}
+
+
+impl fmt::Display for Journal {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
+    {
+        write!(f, "<Journal>\nName: {}\nLength: {}\n{:#?}", self.name, self.length, self.content)
+    } 
 }
 
 
@@ -21,6 +30,11 @@ impl Journal {
         }
     }
 
+    // get
+    pub fn get_article(&mut self, key: &u32) -> Option<(&u32, &Article)>
+    {
+        return self.content.get_key_value(key);
+    }
 
     // add
     pub fn add_article(&mut self, article: Article) -> u32
@@ -31,6 +45,12 @@ impl Journal {
         );
         self.length += 1;
         return self.length;
+    }
+
+    // remove
+    pub fn remove_article(&mut self, key: &u32)
+    {
+        self.content.remove(key);
     }
     
 }
