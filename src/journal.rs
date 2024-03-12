@@ -1,5 +1,7 @@
-use core::fmt;
+use std::fmt;
 use std::collections::BTreeMap;
+use serde::{Serialize, Deserialize};
+
 use crate::article::Article;
 
 
@@ -15,7 +17,7 @@ impl fmt::Display for Journal {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
     {
         write!(f, "{:#?}", self)
-    } 
+    }
 }
 
 
