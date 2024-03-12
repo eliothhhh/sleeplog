@@ -29,7 +29,7 @@ impl Article {
     {
         return Article {
             name: String::from(name),
-            date: Utc::now(),
+            date,
             tags,
             content: String::from(content)
         };
