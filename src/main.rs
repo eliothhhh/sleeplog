@@ -7,6 +7,9 @@ use crate::article::Article;
 use crate::tag::Tag;
 
 fn main() {
-    let j: Journal = Journal::new("test");
-    println!("Hello, world!");
+    let mut j = Journal::new("test");
+    let a = Article::new("foo", "abcd", vec![]);
+    j.add_article(a);
+    println!("{}", j.to_string());
+    
 }

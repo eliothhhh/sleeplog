@@ -2,18 +2,19 @@ use core::fmt;
 use std::collections::BTreeMap;
 use crate::article::Article;
 
+
 #[derive(Debug)]
 pub struct Journal {
     pub (self) name: String,
-    pub (self) content: BTreeMap<u32, Article>,
-    pub (self) length: u32
+    pub (self) length: u32,
+    pub (self) content: BTreeMap<u32, Article>
 }
 
 
 impl fmt::Display for Journal {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
     {
-        write!(f, "<Journal>\nName: {}\nLength: {}\n{:#?}", self.name, self.length, self.content)
+        write!(f, "{:#?}", self)
     } 
 }
 
