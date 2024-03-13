@@ -26,7 +26,7 @@ impl Journal {
     }
 
     // get
-    pub fn get_article(&mut self, key: &u32) -> Option<(&u32, &Article)>
+    pub fn get_article(&self, key: &u32) -> Option<(&u32, &Article)>
     {
         return self.content.get_key_value(key);
     }
