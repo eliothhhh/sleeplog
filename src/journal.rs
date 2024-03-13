@@ -13,14 +13,6 @@ pub struct Journal {
 }
 
 
-impl fmt::Display for Journal {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
-    {
-        write!(f, "{:#?}", self)
-    }
-}
-
-
 impl Journal {
 
     // constructor
@@ -56,4 +48,12 @@ impl Journal {
         self.content.remove(key);
     }
     
+}
+
+
+impl fmt::Display for Journal {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
+    {
+        write!(f, "{:#?}", self)
+    }
 }
