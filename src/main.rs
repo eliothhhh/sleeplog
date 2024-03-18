@@ -10,9 +10,9 @@ use api::{
 
 // dependencies
 use chrono::Utc;
+slint::include_modules!();
 
-
-fn main() {
+fn main() -> Result<(), slint::PlatformError> {
     
     // placeholder
     let a = Article::new(
@@ -23,11 +23,6 @@ fn main() {
         "abcdefghijklmnopqrstuvqxyz"
     );
 
-    let serialized = serde_json::to_string(&a).unwrap();
-    println!("{}", serialized);
-    
-    let deserialized: Article = serde_json::from_str(&serialized).unwrap();
-    println!("{}", deserialized.to_string());
-
-    
+    let ui = AppWindow::new()?;
+    ui.run()
 }

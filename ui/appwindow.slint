@@ -1,0 +1,51 @@
+import { TextEdit, VerticalBox, Button } from "std-widgets.slint";
+
+import "./iosevka-aile/IosevkaAile-Regular.ttc";
+import "./iosevka-aile/IosevkaAile-Heavy.ttc";
+import "./iosevka-aile/IosevkaAile-Bold.ttc";
+import "./iosevka-aile/IosevkaAile-Light.ttc";
+
+
+
+component ArticleEditor inherits VerticalBox
+{
+    alignment: start;
+    spacing: 1.5rem;
+
+    // title
+    TextInput {
+        text: "Dream Title";
+        font-size: 2rem;
+        font-weight: 900;
+        width: 100%;
+        wrap: word-wrap;
+    }
+
+    // tag row
+    HorizontalLayout
+    {
+        spacing: 1rem;
+        alignment: start;
+        Button { text: "tag 1"; }
+        Button { text: "tag 2"; }
+    }
+
+    TextInput {
+        text: "test";
+        width: 100%;
+        wrap: word-wrap;
+    }
+}
+
+
+export component AppWindow inherits Window
+{
+    // no-frame: true;
+    title: "Sleeplog 0.1.0";
+    height: 600px;
+    width: 1000px;
+    default-font-family: "Iosevka Aile";
+    default-font-size: 16px;
+
+    ArticleEditor {}
+}
