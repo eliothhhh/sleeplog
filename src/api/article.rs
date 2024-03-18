@@ -1,8 +1,11 @@
 use std::fmt;
 use serde::{Serialize, Deserialize};
-
 use chrono::{DateTime, Utc};
-use crate::{dreamtype::DreamType, tag::Tag};
+
+use crate::api::{
+    dreamtype::DreamType,
+    tag::Tag
+};
 
 
 #[derive(Serialize, Deserialize, Debug)]

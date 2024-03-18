@@ -2,7 +2,7 @@ use std::fmt;
 use std::collections::BTreeMap;
 use serde::{Serialize, Deserialize};
 
-use crate::article::Article;
+use crate::api::article::Article;
 
 
 #[derive(Serialize, Deserialize, Debug)]

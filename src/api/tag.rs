@@ -5,7 +5,7 @@ use serde::{Serialize, Deserialize};
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Tag {
     pub (self) name: String,
-    pub (self) color: [String; 3]
+    pub (self) color: [u8; 3]
 }
 
 
@@ -20,7 +20,7 @@ impl fmt::Display for Tag {
 impl Tag {
 
     // constructor
-    pub fn new(name: &str, color: [String; 3]) -> Tag
+    pub fn new(name: &str, color: [u8; 3]) -> Tag
     {
         return Tag {
             name: String::from(name),
