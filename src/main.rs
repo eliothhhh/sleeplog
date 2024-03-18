@@ -23,9 +23,11 @@ fn main() {
         "abcdefghijklmnopqrstuvqxyz"
     );
 
-    let serialized = serde_json::to_string_pretty(&a).unwrap();
+    let serialized = serde_json::to_string(&a).unwrap();
     println!("{}", serialized);
     
     let deserialized: Article = serde_json::from_str(&serialized).unwrap();
     println!("{}", deserialized.to_string());
+
+    
 }
