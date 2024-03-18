@@ -1,6 +1,7 @@
 use std::fmt;
 use serde::{Serialize, Deserialize};
 use chrono::{DateTime, Utc};
+use words_count::WordsCount;
 
 use crate::api::{
     dreamtype::DreamType,
@@ -38,6 +39,10 @@ impl Article {
             tags,
             content: String::from(content)
         };
+    }
+
+    pub fn get_words_count(self) -> WordsCount {
+        return words_count::count(self.content);
     }
 
 }

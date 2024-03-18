@@ -10,7 +10,11 @@ use api::{
 
 // dependencies
 use chrono::Utc;
+
+// slint
 slint::include_modules!();
+
+
 
 fn main() -> Result<(), slint::PlatformError> {
     
